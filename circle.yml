@@ -1,0 +1,15 @@
+machine:
+  services:
+    - docker
+
+test:
+  override:
+    - echo done
+
+deployment:
+  docker:
+    branch: master
+    commands:
+      - make build
+      - make tag
+      - make push
