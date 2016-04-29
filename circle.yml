@@ -4,7 +4,7 @@ machine:
 
 test:
   override:
-    - echo done
+    - docker run -it --rm -v "$PWD/Dockerfile":/Dockerfile:ro redcoolbeans/dockerlint
 
 deployment:
   docker:

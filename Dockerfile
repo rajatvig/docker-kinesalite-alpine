@@ -7,7 +7,7 @@ EXPOSE 4567
 ENV DATADIR /var/lib/kinesalite
 
 RUN \
-  mkdir $DATADIR && \
+  mkdir -p $DATADIR && \
   apk add --no-cache python make g++ nodejs && \
   npm install -g kinesalite && \
   apk del python make g++ && \
