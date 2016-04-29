@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM mhart/alpine-node:5.11
 
 MAINTAINER Rajat Vig <rajat.vig@gmail.com>
 
@@ -13,8 +13,8 @@ RUN \
   apk del python make g++ && \
   rm -rf /tmp/* /var/cache/apk/*
 
-WORKDIR $DATADIR
+WORKDIR /var/lib/kinesalite
 
-VOLUME $DATADIR
+COPY cmd.sh $DATADIR
 
-ENTRYPOINT ["kinesalite", "--path", "/var/lib/kinesalite"]
+CMD ["./cmd.sh"]
