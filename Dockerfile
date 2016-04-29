@@ -15,6 +15,6 @@ RUN \
 
 WORKDIR /var/lib/kinesalite
 
-COPY cmd.sh $DATADIR
+COPY cmd.sh /var/lib/kinesalite
 
 CMD ["./cmd.sh"]
