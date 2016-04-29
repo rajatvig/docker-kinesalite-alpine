@@ -8,13 +8,13 @@ ENV DATADIR /var/lib/kinesalite
 
 RUN \
   mkdir -p $DATADIR && \
-  apk add --no-cache python make g++ nodejs && \
+  apk add --no-cache python make g++ && \
   npm install -g kinesalite && \
   apk del python make g++ && \
   rm -rf /tmp/* /var/cache/apk/*
 
 WORKDIR /var/lib/kinesalite
 
-COPY cmd.sh /var/lib/kinesalite
+COPY cmd.sh /var/lib/kinesalite/cmd.sh
 
 CMD ["./cmd.sh"]
