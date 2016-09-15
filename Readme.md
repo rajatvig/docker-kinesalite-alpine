@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/rajatvig/docker-kinesalite-alpine.svg?branch=master)](https://travis-ci.org/rajatvig/docker-kinesalite-alpine)
-
 [![](https://imagelayers.io/badge/rajatvig/kinesalite-alpine:latest.svg)](https://imagelayers.io/?images=rajatvig/kinesalite-alpine:latest 'Get your own badge on imagelayers.io')
 
 # Overview
