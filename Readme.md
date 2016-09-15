@@ -1,4 +1,5 @@
-![](https://circleci.com/gh/rajatvig/kinesalite-alpine.svg?style=shield&circle-token=3f34afbfe78afa0b3097b7f27abd8b0764833bd0)
+[![Build Status](https://travis-ci.org/rajatvig/docker-kinesalite-alpine.svg?branch=master)](https://travis-ci.org/rajatvig/docker-kinesalite-alpine)
+
 [![](https://imagelayers.io/badge/rajatvig/kinesalite-alpine:latest.svg)](https://imagelayers.io/?images=rajatvig/kinesalite-alpine:latest 'Get your own badge on imagelayers.io')
 
 # Overview
