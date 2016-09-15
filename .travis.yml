@@ -5,5 +5,4 @@ services:
   - docker
 
 script:
-- make lint
-- make build tag push
+- make lint build tag push

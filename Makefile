@@ -1,13 +1,18 @@
 OWNER=rajatvig
 IMAGE_NAME=kinesalite-alpine
+VCS_REF=`git rev-parse --short HEAD`
+IMAGE_VERSION=0.3.$(TRAVIS_BUILD_NUMBER)
 QNAME=$(OWNER)/$(IMAGE_NAME)
 
-GIT_TAG=$(QNAME):$(TRAVIS_COMMIT)
-BUILD_TAG=$(QNAME):0.3.$(TRAVIS_BUILD_NUMBER)
+GIT_TAG=$(QNAME):$(VCS_REF)
+BUILD_TAG=$(QNAME):$(IMAGE_VERSION)
 LATEST_TAG=$(QNAME):latest
 
 build:
-	docker build -t $(GIT_TAG) .
+	docker build \
+		--build-arg VCS_REF=$(VCS_REF) \
+		--build-arg IMAGE_VERSION=$(IMAGE_VERSION) \
+		-t $(GIT_TAG) .
 
 lint:
 	docker run -it --rm -v "$(PWD)/Dockerfile:/Dockerfile:ro" redcoolbeans/dockerlint
