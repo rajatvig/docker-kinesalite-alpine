@@ -18,14 +18,5 @@ before_install:
 install: true
 
 script:
-  - make
-
-stages:
-  - test
-  - deploy
-
-jobs:
-  - stage: test
-    script: make test
-  - stage: deploy
-    script: make push
+  - make test
+  - make push
