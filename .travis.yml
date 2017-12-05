@@ -1,5 +1,4 @@
 sudo: required
-language: c
 
 env:
   - GOSS_VERSION=0.3.5 GOSS_PATH=/usr/local/bin/goss
@@ -14,7 +13,6 @@ before_install:
   - sudo chmod +rx /usr/local/bin/dgoss
 
 stages:
-  - compile
   - test
   - deploy
 
