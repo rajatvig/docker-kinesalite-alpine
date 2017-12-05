@@ -13,6 +13,11 @@ before_install:
   - sudo chmod +rx /usr/local/bin/goss
   - sudo chmod +rx /usr/local/bin/dgoss
 
+stages:
+  - compile
+  - test
+  - deploy
+
 jobs:
   - stage: test
     script: make test
