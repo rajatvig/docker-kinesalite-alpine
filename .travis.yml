@@ -10,8 +10,8 @@ services:
   - docker
 
 before_install:
-  - sudo curl -L https://github.com/aelsabbahy/goss/releases/download/$GOSS_VERSION/goss-linux-amd64 -o /usr/local/bin/goss
-  - sudo curl -L https://github.com/aelsabbahy/goss/releases/download/$GOSS_VERSION/dgoss -o /usr/local/bin/dgoss
+  - sudo curl -L https://github.com/aelsabbahy/goss/releases/download/v$GOSS_VERSION/goss-linux-amd64 -o /usr/local/bin/goss
+  - sudo curl -L https://github.com/aelsabbahy/goss/releases/download/v$GOSS_VERSION/dgoss -o /usr/local/bin/dgoss
   - sudo chmod +rx /usr/local/bin/goss
   - sudo chmod +rx /usr/local/bin/dgoss
 
