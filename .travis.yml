@@ -1,4 +1,7 @@
 sudo: required
+dist: trusty
+
+language: c
 
 env:
   - GOSS_VERSION=0.3.5 GOSS_PATH=/usr/local/bin/goss
@@ -11,6 +14,11 @@ before_install:
   - sudo curl -L https://github.com/aelsabbahy/goss/releases/download/$GOSS_VERSION/dgoss -o /usr/local/bin/dgoss
   - sudo chmod +rx /usr/local/bin/goss
   - sudo chmod +rx /usr/local/bin/dgoss
+
+install: true
+
+script:
+  - make
 
 stages:
   - test
