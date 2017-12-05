@@ -1,0 +1,17 @@
+file:
+  /var/lib/kinesalite:
+    exists: true
+    mode: "0755"
+    size: 4096
+    owner: root
+    group: root
+    filetype: directory
+    contains: []
+port:
+  tcp6:4567:
+    listening: true
+    ip:
+    - '::'
+process:
+  node:
+    running: true

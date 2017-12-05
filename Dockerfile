@@ -1,11 +1,13 @@
-FROM mhart/alpine-node:5.11
+FROM mhart/alpine-node:9.2.0
 
 MAINTAINER Rajat Vig <rajat.vig@gmail.com>
 
 ARG VCS_REF
 ARG IMAGE_VERSION
 
-LABEL org.label-schema.vcs-ref=$VCS_REF \
+LABEL NAME="rajatvig/kinesalite-alpine" \
+      VERSION=$IMAGE_VERSION \
+      org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url="https://github.com/rajatvig/docker-kinesalite-alpine" \
       org.label-schema.name="kinesalite-alpine" \
       org.label-schema.description="Run Kinesalite on Alpine Linux" \
@@ -20,7 +22,7 @@ ENV DATADIR /var/lib/kinesalite
 RUN \
   mkdir -p $DATADIR && \
   apk add --no-cache python make g++ && \
-  npm install -g kinesalite && \
+  yarn global add kinesalite && \
   apk del python make g++ && \
   rm -rf /tmp/* /var/cache/apk/*
 
@@ -28,6 +30,6 @@ WORKDIR /var/lib/kinesalite
 
 VOLUME $DATADIR
 
-COPY cmd.sh /var/lib/kinesalite/cmd.sh
+ENTRYPOINT ["kinesalite", "--path /var/lib/kinesalite --createStreamMs 0 --deleteStreamMs 0 --updateStreamMs 0"]
 
-CMD ["./cmd.sh"]
+CMD []
