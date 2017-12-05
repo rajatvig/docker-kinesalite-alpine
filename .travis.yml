@@ -2,8 +2,7 @@ sudo: required
 language: c
 
 env:
-  - GOSS_VERSION=0.3.5
-  - GOSS_PATH=/usr/local/bin/goss
+  - GOSS_VERSION=0.3.5 GOSS_PATH=/usr/local/bin/goss
 
 services:
   - docker
